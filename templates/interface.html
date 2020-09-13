@@ -1,0 +1,59 @@
+<DOCTYPE! html>
+
+<html>
+<head>
+  <title>MatKol</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/></meta>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/spring-flat-colorful/2048/5678_-_Leaf-256.png">
+  <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script type="text/javascript" src ="{{ url_for('static', filename='receptkol.js') }}"></script>
+</head>
+<body name="viewport" content="width=1280, initial-scale=1">
+  <style>
+  body {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/af/Picea_mariana_stand_GJ.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+  </style>
+  <div class = "container" id="main">
+    <h1>MatKol</h1>
+    <h2> Copy-pasta ditt matrecept så räknar vi ut dess koldioxidutslapp</h2>
+    <textarea type="text" id="text" maxlength="1200"></textarea>
+    <button class ="analysknapp" id = "button" onclick = "expand()">
+      Analysera
+    </button>
+    <div id="display">
+      <div class="lds-ellipsis" id="load"><div></div><div></div><div></div><div></div></div>
+      <div><h3 id="result"></h3>
+    </div>
+  </div>
+  </div>
+  <div class = "infoBtn">
+    <a href="#home" class="active" onclick = "info()">Om sidan.</a>
+  </div>
+  <div class ="info" id="infoBox">
+    <a class="close" onclick = "info()"></a>
+    <h4>Koll>Kol</h4>
+    <h5>Välkommen till matkol.se! Detta är en sida där du enkelt kan se koldioxidutsläppen av din mat.
+        Som det står är det enkelt, Copy pasta ditt matrecept i textboxen och tryck på analys så får du ditt resultatet.
+    </h5>
+    <h5>Sidan bygger på data ifrån Rise öppna lista 1.4 och mat-klimat listan 1.0 av Elin Röös.
+        Dessa listor täcker livscykelanalysen de vanligaste svenska livsmedlen.
+        Detta innebär att siffrorna är baserade på inhemsk produktion, primärt baserat på forskning av naturvårdsverket.
+        Tyvärr täcks ej alla livsmedel, så det kan existera en del gap. Speciellt för livsmedel som produceras utomlands eller i liten kvantitet.
+        Programmet buntar därmed ihop liknande livsmedel för att fylla dessa gapen.
+        Detta för att ge bra täckande över maten och enklare visualisering av din mats miljöavtryck.
+    </h5>
+    <h5> Filosofin bakom sidan är att visualisering är väldigt viktigt för att bekämpa vår miljöförstöring.
+          Ju mer vi ser vår påverkan och förstår dess storlek destu bättre.
+          Vad som är tydligt när man läst en del på området är att livscykelanalyser
+          svåra att bedömma och för det andra resurskrävande att genomföra.
+          Det är exempelvis därför det inte står på innehållsförteckningar med mera.
+          Så ett stort tack till all den forskning som gör sidor som denna möjlig. </h5>
+  <h5>  Utvecklad av Oscar Johansson</h5>
+  <h5>  Mejl: <br />o.n.johansson@gmail.com</h5>
+  </div>
+</body>
+</html>
